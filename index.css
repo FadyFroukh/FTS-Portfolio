@@ -118,7 +118,7 @@ main{
     width: 33.33%;
     height: 400px;
     margin-inline-end: 10px;
-    margin-block: 20px;
+    margin-block: 50px;
     position: relative;
 }
 .projects .project .overlay{
