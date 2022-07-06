@@ -1,0 +1,321 @@
+/* General Settings */
+:root{
+    --grey:#636e72;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.arrows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.arrow{
+    background-color: var(--grey);
+    width: 65px;
+    height: 65px;
+    clip-path: circle(50%);
+    transform: scale(0);
+    animation: arrow-wave 5s ease-in-out infinite;
+}
+.arrow:last-of-type{
+    margin-left: 10px;
+}
+.arrow > a{
+    color: #000;
+}
+
+
+/* End of General Settings */
+
+/* Main Section */
+
+main{
+    background: url("pics/network.gif") repeat;
+    background-size: cover;
+}
+.main-section{
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+.main-section .main-header{
+    height: 20vh;
+}
+.main-section .main-header nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1.5rem;
+}
+.main-header nav .logo{
+    font-family: 'Cedarville Cursive', cursive;
+}
+.main-section .main-content{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main-content .image-container{
+    width: 200px;
+    height: 200px;
+    clip-path: circle(50%);
+    margin: 0 0 20px 0;
+}
+.main-content .image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    filter: drop-shadow(3px 3px 3px #fff) saturate(140%) contrast(110%);
+    opacity: 0;
+    animation: myPic 5s ease-in infinite;
+}
+
+
+/* End of Main Section */
+
+/* Education Section */
+.education-section > .facility{
+    margin: 10px 0;
+}
+.education-section > .facility figure  img{
+    width: 150px;
+    height: 150px;
+    clip-path: circle(50%);
+    object-fit: contain;
+    object-position: center;
+}
+.education-section > .facility figure  figcaption{
+    margin-bottom: 10px;
+}
+
+/* End of Education Section */
+
+/* Work Section */
+
+.work-section .projects{
+    display: flex;
+    margin: 15px 0;
+    position: relative;
+}
+.work-section .projects .project{
+    width: 33.33%;
+    height: 400px;
+    margin-inline-end: 10px;
+    margin-block: 20px;
+    position: relative;
+}
+.projects .project .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.projects .project figure{
+    width: 100%;
+    height: 100%;
+}
+.projects .project img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.projects .project .overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+/* End of Work Section */
+
+/* About Section */
+
+.about-section .about-text{
+    width: 100%;
+    line-height: 2;
+}
+
+/* End About Section */
+
+/* Contact Section */
+.contact-section .contact-header{
+    line-height: 1.7;
+}
+.contact-methods{
+    margin: 25px 0;
+    flex-direction: row !important;
+}
+.contact-methods .method{
+    margin-inline-end: 15px;
+    width: 33.33%;
+}
+.contact-methods .method figcaption{
+    margin-block: 10px;
+}
+.method a{
+    color: #fff;
+}
+/* End of Contact Section */
+
+/* Footer */
+
+footer{
+    padding: 10px;
+    text-align: center;
+}
+footer .footer-name{
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+/* End of Footer */
+
+/* Framework */
+
+.wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+.item-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-center-ver{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.header{
+    font-size:clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.7;
+}
+
+.menu-clear{
+    display: flex;
+    list-style: none;
+}
+.menu-clear > li {
+    margin-inline: 4px;
+}
+.menu-clear > li > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link-clear{
+    color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (max-width:767px){
+    .wrapper{
+        width:350px;
+    }
+    .projects {
+        flex-wrap: wrap;
+    }
+    .projects .project{
+        width: 100% !important;
+    }
+    .main-header nav{
+        flex-direction: column;
+        align-items: center !important;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px){
+    .wrapper{
+        width:738px;
+    }
+    .projects {
+        flex-wrap: wrap;
+    }
+    .projects .project{
+        width: 100% !important;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1199px){
+    .wrapper{
+        width:962px;
+    }
+}
+@media screen and (min-width:1200px){
+    .wrapper{
+        width:1170px;
+    }
+}
+
+/* Animations */
+
+@keyframes arrow-wave{
+    0%{
+        transform: scale(0);
+    }
+    20%{
+        transform: scale(0.2);
+    }
+    40%{
+        transform: scale(0.4);
+    }
+    60%{
+        transform: scale(0.6);
+    }
+    80%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes myPic {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0.33;
+    }
+    40%{
+        opacity: 0.66;
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+@media (prefers-reduced-motion){
+    .arrow{
+        animation-play-state: paused;
+    }
+}
